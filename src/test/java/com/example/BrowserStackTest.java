@@ -33,7 +33,7 @@ public class BrowserStackTest {
     @Test
     public void test() {
         Actions actions = new Actions(driver);
-        String url = "https://www.browserstack.com";
+        String url = "https://ci.bsstag.com";
         driver.get(url);
         takePercySnapshot("Home page");
         driver.findElement(By.cssSelector("a[title=Pricing]")).click();
