@@ -21,6 +21,8 @@ public class BrowserStackTest {
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "/Users/sujaysawant/Documents/Binary/chromedriver");
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--window-size=1920,1080");
+        options.setHeadless(true);
         driver = new ChromeDriver(options);
         percy = new Percy(driver);
     }
