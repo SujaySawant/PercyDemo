@@ -1,0 +1,12 @@
+version: 1
+snapshot:
+  percy-css: |
+    .docs--container {
+       height:unset;
+    }
+    .docs--container .docs--content
+    {
+      height:unset;
+      overflow-y:visible;
+      overflow-x:visible;
+    }

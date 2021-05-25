@@ -1,6 +1,6 @@
 package com.example;
 
-import io.percy.selenium.*;
+import io.percy.selenium.Percy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,21 +35,16 @@ public class BrowserStackTest {
         Actions actions = new Actions(driver);
         String url = "https://www.browserstack.com";
         driver.get(url);
-        takePercySnapshot("Home page");
+        percy.snapshot("Home page", Arrays.asList(480, 1280, 1920));
         driver.findElement(By.cssSelector("a[title=Pricing]")).click();
-        takePercySnapshot("Pricing page");
+        percy.snapshot("Pricing page", Arrays.asList(480, 1280, 1920));
         actions.moveToElement(driver.findElement(By.id("product-menu-toggle"))).perform();
         driver.findElement(By.cssSelector("a[data-product=Automate]")).click();
         driver.findElement(By.xpath("//span[text()='Integrations']")).click();
-        takePercySnapshot("Integrations Automate page");
+        percy.snapshot("Integrations Automate page", Arrays.asList(480, 1280, 1920));
         actions.moveToElement(driver.findElement(By.id("developers-menu-toggle"))).perform();
         driver.findElement(By.cssSelector("a[title=Documentation]")).click();
-        takePercySnapshot("Documentation page");
-    }
-
-    private void takePercySnapshot(String name) {
-        System.out.println(driver.getCurrentUrl());
-        percy.snapshot(name, Arrays.asList(375, 480, 720, 1280, 1440, 1920));
+        percy.snapshot("Documentation page", Arrays.asList(480, 1280, 1920));
     }
 
 }
