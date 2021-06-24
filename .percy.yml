@@ -10,3 +10,5 @@ snapshot:
       overflow-y:visible;
       overflow-x:visible;
     }
+discovery:
+  disable-cache: true
