@@ -34,6 +34,7 @@ public class BrowserStackTest {
     public void test() {
         Actions actions = new Actions(driver);
         String url = "https://www.browserstack.com";
+//        String url = "https://k8s.bsstag.com";
         driver.get(url);
         percy.snapshot("Home page", Arrays.asList(480, 1280, 1920));
         driver.findElement(By.cssSelector("a[title=Pricing]")).click();
